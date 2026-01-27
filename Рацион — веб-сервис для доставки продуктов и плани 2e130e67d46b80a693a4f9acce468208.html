@@ -1,0 +1,719 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Рацион — веб-сервис для доставки продуктов и планирования питания ❘ 2025</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2e130e67-d46b-80a6-93a4-f9acce468208" class="page sans"><header><h1 class="page-title" dir="auto">Рацион — <strong>веб-сервис</strong> для доставки продуктов и планирования питания ❘ 2025</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>Tags</th><td><span class="selected-value select-value-color-blue">Web service</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-8043-a438-e37725bc0c98" class="image"><a href="1%201.jpg"><img style="width:816px" src="1%201.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h3 id="2e130e67-d46b-8014-a087-d6df468b70ce" class="">«Рацион» — это веб-сервис для планирования питания, который объединяет обширную библиотеку разнообразных рецептов с фильтрацией, мгновенное формирование корзины продуктов одним кликом и их доставку. Пользователи могут как спонтанно выбирать блюда, так и составлять персональное меню на неделю.</h3></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8098-b4de-fa8e6ecd812f"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8037-b53d-d75157816c42" class="">Принято решение создать единый цифровой сервис, который <strong>объединяет поиск рецептов, планирование и закупку товаров, </strong>позволяя пользователям заказывать продукты для отдельных блюд или составлять полноценное меню на неделю.<br/></p></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-8042-8912-cb442439cfb2" class="">Проблема</h2></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-8095-987f-c9d59c9df4c9" class="">Отсутствие на рынке единого решения, закрывающего цикл от поиска рецепта до точной закупки ингредиентов.</p></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-8032-b3a3-d18e59c1d9bf" class="">Решение</h2></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-80af-952f-cdfa039e0003" class="">Разработать веб-сервис с AI-подбором рецептов, автоматическим расчётом ингредиентов и бесшовной интеграцией с доставкой для быстрых и запланированных покупок.</p></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-80c2-9bb7-d33178fdca38" class="">Результат</h2></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-80ef-a76b-e179c234f367" class="">Готовый дизайн-концепт сервиса, объединяющего рецепты, корзину и доставку продуктов в одном интерфейсе, сокращающий время планирования питания.</p></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80b7-80aa-e672ed034c54" class="">Задачи проекта</h2></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-80e2-9a5b-d8cd539ed0d3" class="">Создать веб-сервис, который снизит когнитивную нагрузку и сэкономит время на планировании питания</p></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-8003-bd8b-c20940993405" class="numbered-list" start="1"><li><strong>Формирование корзины. </strong>Внедрить решение для автоматического заказа продуктов из рецепта</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-80b1-802b-e88535b47a89" class="numbered-list" start="2"><li><strong>Подбор рецептов. </strong>Создать каталог с фильтрацией для быстрого поиска блюд по предпочтениям</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-8084-be15-c297b47ef9b6" class="numbered-list" start="3"><li><strong>Планирование. </strong>Разработать инструмент для удобного составления меню на неделю</li></ol></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-800e-9487-d14b1e39b5ec" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-8014-9f96-f6aef93c1f4c" class="image"><a href="Frame_34135.jpg"><img style="width:816px" src="Frame_34135.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-808f-919c-f827c4ec6bbf" class="">Этапы</h2></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-8064-a392-ede692da0e42" class="numbered-list" start="1"><li><strong>Исследование</strong> (1 неделя)</li></ol></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-80da-9bc4-e534604cf6ac" class="bulleted-list"><li style="list-style-type:disc">Цели и задачи</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-802f-986e-f82519498008" class="bulleted-list"><li style="list-style-type:disc">Анализ конкурентов</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8075-86e8-ddf77967b279" class="bulleted-list"><li style="list-style-type:disc">Исследование ЦА</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-808f-8fed-d71ac83ef3af" class="bulleted-list"><li style="list-style-type:disc">Глубинные интервью</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8094-b979-edba39b881dc" class="bulleted-list"><li style="list-style-type:disc">Метод персон</li></ul></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8021-8692-e2f7309e3832"/></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-80c7-b02a-da9f5fac74f6" class="numbered-list" start="2"><li><strong>Проектирование/UX </strong>(2 неделя)</li></ol></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-80fb-ba9c-f03c1c7a40a5" class="bulleted-list"><li style="list-style-type:disc">User Flow</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-80a6-a729-daad95980892" class="bulleted-list"><li style="list-style-type:disc">Wireframes</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8038-813a-f59890fe9884" class="bulleted-list"><li style="list-style-type:disc">Low-Fi Prototype</li></ul></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-807a-81e9-c444a829bf09"/></div><div style="display:contents" dir="auto"><ol type="1" id="2e130e67-d46b-80d9-98bf-ddc83d36454b" class="numbered-list" start="3"><li><strong>Визуальный дизайн/UI </strong>(3 неделя)</li></ol></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8054-9e07-d942f2eaa159" class="bulleted-list"><li style="list-style-type:disc">Moodboard/References</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8037-8e37-cd75f429efa7" class="bulleted-list"><li style="list-style-type:disc">Interface Design</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8079-b4f2-e9c1783f7985" class="bulleted-list"><li style="list-style-type:disc">UI-Kit</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-80a2-890c-d42737598ab9" class="bulleted-list"><li style="list-style-type:disc">Clickable prototype</li></ul></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-802c-aaa8-f369e6a0aa0f" class="">Анализ конкурентов</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-803f-b3c9-db66b7da8d06" class="">Анализ конкурентов на рынке доставки продуктов и рецептов позволил выявить их сильные и слабые стороны, что помогло определить возможности для создания более удобного и цельного сервиса.</p></div><div style="display:contents" dir="ltr"><figure id="2e130e67-d46b-80ac-8d9a-df8cdaf5040c" class="image"><a href="5%201.jpg"><img style="width:816px" src="5%201.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80dd-9d83-d44f793993e1" class="">
+</p></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80ba-8d82-ed8a62e0fa56" class="">Вывод</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-800b-9ea9-fb8f4a39c15b" class="">Сервис может занять сильную позицию, сделав ставку не на подписки и наборы, а на <strong>гибкость и контроль пользователя.</strong> Главный посыл: «Выбирайте любое блюдо, а все расчёты, список покупок и доставку мы берём на себя», что решает проблему негибких систем у конкурентов.</p></div><div style="display:contents" dir="auto"><h3 id="2e130e67-d46b-80f6-97f1-d1f8b7ff1f72" class=""><strong>Основываясь на анализе конкурентов, важно реализовать следующее:</strong></h3></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8077-82f8-d4e3a1acf58d" class=""><strong>1. Интеграция рецептов с корзиной покупок</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-800a-bb72-e0c27d484d8b" class="">Будет разработан единый пользовательский поток, где карточка рецепта напрямую связана с корзиной через кнопку «Добавить всё», устраняя разрозненность модулей.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8044-b0e2-cc9a85bda164"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8080-bc74-d2729dc8084f" class=""><strong>2. Продвинутая, но простая фильтрация</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-804c-a426-d93efa7be2dc" class="">Создадим систему фильтров, позволяющую комбинировать параметры (диета + время + кухня), сохраняя при этом минималистичный интерфейс.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8028-b9cf-eef605079267"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8049-b78d-d4cf22ec3b8f" class=""><strong>3. Интеллектуальные инструменты расчета</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80bb-ac2d-db163dcd3046" class="">Внедрим функцию изменения количества персон с автоматическим пересчетом грамовок ингредиентов, решая проблему пользователей с ручными расчетами.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-800e-916a-f5542948f888"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8073-add2-d57223a232a7" class=""><strong>4. Строгая консистентность и доступность</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80c4-8622-ee0ed76c847b" class="">Разработаем UI-kit с четкими правилами типографики, контрастности и адаптивности, избегая визуального шума и проблем с отображением на разных устройствах.</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80b8-ad5a-c1f2e51b0780" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80c8-a106-e6db091b4307" class="image"><a href="Frame_34136.jpg"><img style="width:816px" src="Frame_34136.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80be-9dd9-f1627c7ece60" class="">Глубинные интервью</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8086-8eb0-cd07cc8fba43" class="">Чтобы глубже погрузиться в контекст ежедневной рутины планирования питания, были проведены глубинные интервью с 3 пользователями, которые регулярно готовят дома и заранее планируют меню.</p></div><div style="display:contents" dir="auto"><h3 id="2e130e67-d46b-80e7-8b26-ea800b67b544" class="">Подготовка к интервью</h3></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-803e-b3d2-c4046a1e26a9" class=""><strong>1. Исследовательские вопросы</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80e4-914f-e74b3f3f677d" class="">Фокус исследования: что именно нужно узнать о пользователях</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-802f-ae18-ef1c26a6b915" class=""><strong>2. Сформулированные гипотезы</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-800d-9a70-e63276a91ce7" class="">Предположения о поведении и проблемах, которые нужно проверить</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8008-b960-f3e88ba8ade6" class=""><strong>3. Гайд глубинного интервью</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8045-a56a-df15e9b9a750" class="">Детальный план беседы с пользователем для проверки гипотез и поиска ответов</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-808d-9fbd-dc88ac4e75cf" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80d3-ae30-fb9846a80554" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_17.49.21.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_17.49.21.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-80a1-9e16-ece1c3b675cf" class=""><strong><a href="https://www.figma.com/design/rnxSYUhaQ6eXlwQZjrMcSQ/%D0%A0%D0%B0%D1%86%D0%B8%D0%BE%D0%BD.-%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0-%D1%81-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8-%D1%80%D0%B5%D1%81%D0%BF%D0%BE%D0%BD%D0%B4%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?node-id=0-1&amp;t=m8x0Al31IKnjy1Ya-1">Таблица с ответами респондентов</a></strong></p></div><div style="display:contents" dir="ltr"><figure id="2e130e67-d46b-803a-b200-de352f22ab29" class="image"><a href="Frame_34107.jpg"><img style="width:816px" src="Frame_34107.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80a2-b57d-e9b7a1e5dca2" class="image"><a href="Table_1.png"><img style="width:816px" src="Table_1.png"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80de-8e3f-e0001b560be5" class="">Инсайты</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-808a-824f-ecb665bc54e4" class=""><em><mark class="highlight-gray">(выявленные в ходе интвервью)</mark></em></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80f8-893d-dd6408e08808" class=""><strong>1. Калькулятор в голове</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8082-b130-e31d33fc5ed2" class="">Пользователи ведут ментальные расчёты («курицы на 3 дня, гречки на 4 обеда...»), но этот процесс требует концентрации, утомляет и часто приводит к ошибкам (недостаток/излишки).</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-80c1-9245-dd12afcc120b"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-804f-83af-c69758537e56" class=""><strong>2. «Не могу придумать» = страх ошибки</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8033-ac32-eb34a0fe4eb4" class="">У пользователей есть проверенные «дежурные» рецепты. Новые блюда вызывают опасения: «потрачу время/деньги, а получится невкусно». Это не отсутствие идей, а риск-аверсия и нежелание тратить ресурсы впустую.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8010-9367-e689ea64b890"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80f2-ab0a-f9c3e2b769ea" class=""><strong>3. Идеальный план = ментальный покой</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80cd-baa9-e77c1f8b70a3" class="">Главная ценность планирования — не экономия, а психологическое облегчение. Готовый план снимает «фоновый шум» из ежедневных вопросов «что готовить?», освобождая ресурсы для других задач.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-80a2-8afc-f2775a498c9e"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80a3-8ddf-d50a461956f4" class=""><strong>4. Проклятие однотипных подборок</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-809f-ad39-cafefa40d409" class="">Алгоритмы кулинарных сайтов зацикливаются на однотипных блюдах (например, только паста или куриная грудка), что ведёт к «пищевой скуке» и ощущению, что «готовлю одно и то же».</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-803f-9725-d1a685dab2e1"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-80c5-807f-ccb691e59f71" class=""><strong>5. Фильтры как защита от хаоса</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8096-a538-fb5dab5f4c2b" class="">В большом каталоге рецептов пользователи ценят не количество, а качественные фильтры (время, сложность, ингредиенты), которые помогают быстро сузить выбор до 3-5 релевантных вариантов.</p></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-8005-8dd9-cc601d03c3e7"/></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-804c-80fa-d16b26510449" class=""><strong>6. Боль не в готовке, а в подготовке</strong></p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-807d-a61e-f2140f769092" class="">Сам процесс готовки может приносить удовольствие. Источник стресса и рутины — подготовительные этапы: придумать, посчитать, проверить запасы, купить. Именно их нужно максимально автоматизировать.</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8050-abfb-efea3a42e39b" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-8022-8389-d25071f065de" class="image"><a href="12%201.jpg"><img style="width:816px" src="12%201.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80a9-bc9d-c3d33f8e3e6e" class="">Метод персон</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-800c-a570-e6b322563b07" class="">На основе данных интервью были созданы конкретные пользовательские персоны, которые помогают анализировать потребности и принимать более точные дизайн-решения.</p></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8099-bdce-f3f7030ce0d5" class=""><strong>Общий портрет пользователя</strong> — ч<strong>еловек, который</strong> <strong>готовит дома регулярно и планирует питание заранее</strong>, чтобы избавиться от постоянного вопроса «что приготовить сегодня?». Его потребность — не просто найти рецепт, а получить готовый план, который сэкономит ментальные ресурсы, сохранив при этом его контроль над выбором.</p></div><div style="display:contents" dir="auto"><p id="2e430e67-d46b-8094-9a83-fa8f7f061710" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80c9-a5a6-f745e6bc21ca" class="image"><a href="Person_1.jpg"><img style="width:816px" src="Person_1.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-8045-a9ef-e4f4ec4a8b42" class="image"><a href="Person_4.jpg"><img style="width:816px" src="Person_4.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80c1-b3bf-ec60c469485d" class="image"><a href="Person_5.jpg"><img style="width:816px" src="Person_5.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-80e9-987b-ca96bdfa5c27" class="">Пользовательский сценарий</h2></div><div style="display:contents" dir="auto"><p id="2ef30e67-d46b-803f-a997-eac5b879e2a3" class=""><em><mark class="highlight-gray">Пример сценария первой песроны</mark></em></p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-8071-93ec-ef4c8c744c24" class="image"><a href="User_scenario.jpg"><img style="width:816px" src="User_scenario.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e130e67-d46b-80d4-952e-da75602f6294" class="">User Flow</h2></div><div style="display:contents" dir="auto"><p id="2e130e67-d46b-8009-8ae3-f339c24f0eec" class="">На основе исследования был построен User Flow, который детально описывает путь пользователя от первого входа на сайт до оформления заказа и выхода за минимальное количество шагов.</p></div><div style="display:contents" dir="ltr"><figure id="2e130e67-d46b-804b-8beb-d7d344c7d860" class="image"><a href="Frame_34113.jpg"><img style="width:816px" src="Frame_34113.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-8022-957d-c7b0b35c753f" class="">Low-fi prototype</h2></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-800c-b662-d208953c6180" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.04.56.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.04.56.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-802b-9f69-e296f1a5c84b" class="">Hi-fi prototype</h2></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-800b-8a7e-eedbbe259675" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.06.50.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.06.50.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-801c-beb4-c8df1a2c964d" class="image"><a href="Frame_34137.jpg"><img style="width:816px" src="Frame_34137.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2ef30e67-d46b-80ca-bc75-d317a6cd1c52" class="image"><a href="Frame_34138.jpg"><img style="width:816px" src="Frame_34138.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-8001-a961-de79f0904e69" class="">Clickable prototype</h2></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-807d-963b-dbbc39faf9e5" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.22.19.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.22.19.jpg"/></a></figure></div><div style="display:contents" dir="auto"><h2 id="2e430e67-d46b-8073-b42e-d67982da8d7f" class="">UI-Kit</h2></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-804e-ad78-d1b10fc951aa" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.23.57.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.23.57.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-80ad-b4db-d6e62e2750b4" class="image"><a href="15.jpg"><img style="width:816px" src="15.jpg"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-809b-a8e8-fd7287e5ca01" class="image"><a href="16%201.jpg"><img style="width:816px" src="16%201.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p id="2ef30e67-d46b-800a-a819-fefda4a91f48" class=""><em><mark class="highlight-gray">Процесс редактирования/обработки карточек в Adobe Photoshop</mark></em></p></div><div style="display:contents" dir="ltr"><figure id="2e430e67-d46b-803c-8df4-f5f6788c2c49" class="image"><a href="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.34.34.jpg"><img style="width:816px" src="%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_10.01.26_18.34.34.jpg"/></a></figure></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
