@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Анна Друзина</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17a30e67-d46b-8082-aec7-df4d4582dbb5" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="photo_2025-06-09_10-03-54.jpg"/></div><h1 class="page-title" dir="auto">Анна Друзина</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="2d530e67-d46b-8064-8f0c-fb471d974606" class=""><strong>Привет! Я Аня — UI/UX-дизайнер, создаю удобные интерфейсы, которые помогают бизнесу расти, а пользователям легко достигать своих целей</strong></p></div><div style="display:contents" dir="auto"><ul id="2d630e67-d46b-8099-94e5-d5b06b10d2a8" class="bulleted-list"><li style="list-style-type:disc">Телеграм: <mark class="highlight-default_background"><a href="https://t.me/druzinaanna">@druzinaanna</a></mark></li></ul></div><div style="display:contents" dir="auto"><ul id="2d630e67-d46b-806d-b456-c8fbfe81d548" class="bulleted-list"><li style="list-style-type:disc">Почта: <a href="mailto:druzina.anna@yandex.ru">druzina.anna@yandex.ru</a></li></ul></div><div style="display:contents" dir="auto"><h1 id="17a30e67-d46b-8166-af59-e12a08b333d1" class="">🚀 Мои проекты</h1></div><div style="display:contents" dir="ltr"><div id="2d630e67-d46b-800a-89f4-f9e72ee914f8" class="collection-content"><h4 class="collection-title">Последние</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>Tags</th></tr></thead><tbody><tr id="2ef30e67-d46b-802f-8edb-e3aa1bb1a81b"><td class="cell-title"><a href="%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%98%D0%B2%D0%B8%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%C2%AB%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%B0%C2%BB%20%202ef30e67d46b802f8edbe3aa1bb1a81b.html">Тестовое Иви. Функциональность «загрузка контента» ❘ 2026</a></td><td class="cell-{=XM"><span class="selected-value select-value-color-green">App</span></td></tr><tr id="2d630e67-d46b-8015-9349-e7cf60621681"><td class="cell-title"><a href="%D0%A1%D0%B8%D0%BD%D0%B5%D0%BC%D0%B0%20%D0%9F%D0%B0%D1%80%D0%BA%20%D0%A0%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D0%B2%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BA%D0%B8%D0%BD%D0%BE%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%B0%20%E2%9D%98%202025%202d630e67d46b80159349e7cf60621681.html">Синема Парк. Редизайн веб-сервиса кинотеатра ❘ 2025</a></td><td class="cell-{=XM"><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="2e130e67-d46b-80a6-93a4-f9acce468208"><td class="cell-title"><a href="%D0%A0%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%20%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%BE%D0%B2%20%D0%B8%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%202e130e67d46b80a693a4f9acce468208.html">Рацион. Веб-сервис для доставки продуктов и планирования питания ❘ 2025</a></td><td class="cell-{=XM"><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="2e130e67-d46b-803e-8b20-e0d4ff1d5020"><td class="cell-title"><a href="%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5%20%D0%A0%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0%20%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B0%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%20%E2%9D%98%2020%202e130e67d46b803e8b20e0d4ff1d5020.html">ВКонтакте. Редизайн раздела рейтинга сообществ ❘ 2025</a></td><td class="cell-{=XM"><span class="selected-value select-value-color-green">App</span><span class="selected-value select-value-color-default">Учебный проект</span></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="ltr"><div id="2ef30e67-d46b-80e6-84ec-fb08bfb5e1d5" class="collection-content"><h4 class="collection-title">Остальные</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>Tags</th></tr></thead><tbody><tr id="31130e67-d46b-80c9-883a-ce2d23d61048"><td class="cell-title"><a href="%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%A1%D0%B1%D0%B5%D1%80%20%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D1%81%D1%87%D0%B5%D1%82%D0%BE%D0%B2%20%E2%9D%98%202026%2031130e67d46b80c9883ace2d23d61048.html">Тестовое Сбер. Оптимизация оплаты счетов ❘ 2026</a></td><td class="cell-KWwH"><span class="selected-value select-value-color-green">App</span></td></tr><tr id="2ef30e67-d46b-805f-be83-c81271eea60d"><td class="cell-title"><a href="%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%C2%ABHealth%20Center%C2%BB%20%D0%A0%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%E2%9D%98%202025%202ef30e67d46b805fbe83c81271eea60d.html">Тестовое «Health Center». Редизайн сайта ❘ 2025</a></td><td class="cell-KWwH"><span class="selected-value select-value-color-blue">Web</span></td></tr><tr id="2e130e67-d46b-8071-8fc9-f90bf0ea9d07"><td class="cell-title"><a href="Astrelle%20%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%B8%20%D0%A2%D0%B0%D1%80%D0%BE%202e130e67d46b80718fc9f90bf0ea9d07.html">Astrelle. Приложение для изучения астрологии и Таро ❘ 2024</a></td><td class="cell-KWwH"><span class="selected-value select-value-color-green">App</span></td></tr><tr id="30c30e67-d46b-8030-a214-f65b3e04a0fa"><td class="cell-title"><a href="%D0%A4%D0%B8%D1%88%20%D0%AE%20%D0%A1%D0%B5%D1%82%D1%8C%20%D1%80%D1%8B%D0%B1%D0%BD%D1%8B%D1%85%20%D0%B1%D0%B8%D1%81%D1%82%D1%80%D0%BE%20%E2%9D%98%202024%2030c30e67d46b8030a214f65b3e04a0fa.html">Фиш Ю. Сеть рыбных бистро ❘ 2024</a></td><td class="cell-KWwH"><span class="selected-value select-value-color-yellow">Фирменный стиль</span></td></tr><tr id="31130e67-d46b-8015-9011-fe4e5ff0f4b6"><td class="cell-title"><a href="%D0%AE%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B%20%D0%94%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B0%D1%80%D0%BA%20%E2%9D%98%202024%2031130e67d46b80159011fe4e5ff0f4b6.html">Южные культуры. Дендрологический парк  ❘ 2024</a></td><td class="cell-KWwH"><span class="selected-value select-value-color-yellow">Фирменный стиль</span></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><h1 id="2d630e67-d46b-80d2-97e5-e4cde3894ace" class="">💻 Опыт работы</h1></div><div style="display:contents" dir="auto"><div id="2e930e67-d46b-8075-a89f-d545959ad902" class="column-list"><div style="display:contents" dir="auto"><div id="2e930e67-d46b-8070-b40f-c01bef6558e9" style="width:31.25%" class="column"><div style="display:contents" dir="auto"><p id="2e930e67-d46b-80d5-8826-e3a08c40ef7b" class=""><strong>ООО «Фаренгейт Лаб» </strong></p></div><div style="display:contents" dir="auto"><p id="2e930e67-d46b-807e-aec4-ed476f5d2b0b" class=""><a href="https://www.fahrenheitlab.ru/">fahrenheitlab.ru</a> <em><mark class="highlight-gray">— разработка программного обеспечения</mark></em></p></div><div style="display:contents" dir="auto"><p id="2e930e67-d46b-80ea-8015-c078e13e3370" class=""><strong>UI/UX дизайнер</strong></p></div><div style="display:contents" dir="auto"><p id="2e930e67-d46b-8009-8cf8-e5ad9c18d9b5" class=""><em><mark class="highlight-gray">Декабрь 2023 </mark></em><mark class="highlight-gray">– Январь </mark><em><mark class="highlight-gray">2026<br/>(2 года и 2 месяца)</mark></em></p></div></div></div><div style="display:contents" dir="auto"><div id="2e930e67-d46b-80d2-81ac-fbc423c4677d" style="width:68.75%" class="column"><div style="display:contents" dir="auto"><p id="2e930e67-d46b-80ec-a251-e551b611cd1f" class="">Компания занималась разработкой web-сервисов и мобильных приложений для собственных продуктов и внешних клиентов (B2B и B2C).</p></div><div style="display:contents" dir="auto"><hr id="2f430e67-d46b-803f-babf-e77d51497e14"/></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8081-ae41-f79de4dfd30f" class=""><strong>Что делала на проектах:</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8090-8ee2-f5a542b754bf" class=""><em><mark class="highlight-default">—</mark></em> Проводила анализ пользовательского поведения и конкурентов, CustDev, usability-тестирование прототипов, формировала и проверяла гипотезы для улучшения продуктовых метрик и пользовательского опыта;</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80f9-a3bf-e3917960fe2c" class=""><em><mark class="highlight-default">—</mark></em> Проектировала User Flow, CJM (Customer Journey Map), информационную архитектуру для web и мобильных интерфейсов. Создавала сценарии для каталогов, фильтров, корзины и оформления заказов;</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8036-9518-d10e5e791c83" class=""><em><mark class="highlight-default">—</mark></em> Разрабатывала low и high-fidelity (низкой и высокой детализации) прототипы с учетом продуктовых метрик. Уверенно использовала Auto Layout, компоненты, Variants и Variables (design tokens) в Figma;</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8086-a334-d0127a70d64b" class=""><em><mark class="highlight-default">—</mark></em> Создавала и развивала UI-киты и дизайн-системы, а также работала в соответствии с гайдлайнами платформ (Material Design для Android и Human Interface Guidelines для iOS);</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-804d-b3ad-efebd1df2c9d" class=""><em><mark class="highlight-default">—</mark></em> Запускала A/B-тесты визуальных решений;<br/><em><mark class="highlight-default">—</mark></em> Подготавливала макеты к разработке: адаптивные версии, состояния компонентов, спецификации, сопровождала реализацию и проводила дизайн-ревью;<br/><em><mark class="highlight-default">—</mark></em> Разрабатывала пакеты материалов для Google Play и App Store (иконки, скриншоты, промо-графика);<br/><em><mark class="highlight-default">—</mark></em> Использовала Figmotion и LottieFiles для анимаций интерфейса;<br/><em><mark class="highlight-default">—</mark></em> Тесно взаимодействовала с продукт-менеджером и разработчиками. Участвовала в планировании и постановке ТЗ (Яндекс.Трекер/Jira), проводила дизайн-ревью и по требованию оперативно вносила правки.</p></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="2e130e67-d46b-80c8-a548-cd32dde36bef"/></div><div style="display:contents" dir="auto"><div id="2f430e67-d46b-8021-ba17-fe29d37e8b20" class="column-list"><div style="display:contents" dir="auto"><div id="2f430e67-d46b-8000-aa6c-c31d977ee7d4" style="width:31.25%" class="column"><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8069-acb1-cb7e92694c06" class=""><strong>ООО Блэккфорт <br/>(Фаренгейт Лаб)</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80d1-b8f1-f79872cf0779" class=""><strong>UI/UX дизайнер</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8010-b963-fe2732a2ca62" class=""><em><mark class="highlight-gray">Июль 2025 </mark></em><mark class="highlight-gray">– Декабрь </mark><em><mark class="highlight-gray">2025<br/>(6 месяцев)</mark></em></p></div></div></div><div style="display:contents" dir="auto"><div id="2f430e67-d46b-80a9-8a2c-d5539590272d" style="width:68.75%" class="column"><div style="display:contents" dir="auto"><p id="30b30e67-d46b-8097-b076-f0741a7d9681" class="">Продолжение работы в той же компании, но в рамках выделенных B2B-проектов для сторонних клиентов.</p></div><div style="display:contents" dir="auto"><hr id="30b30e67-d46b-8026-9f17-f771dddf21c0"/></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8022-a014-f22bfdae7ec9" class=""><strong>1. Рацион </strong><em><mark class="highlight-default">—</mark></em><strong> web-сервис для планирования питания</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8020-8f2b-f5693967ebc6" class=""><strong>Задача:</strong> создать единое решение для подбора рецептов и планирования покупок.</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80f1-9c8d-ef184d114825" class=""><strong>Решение:</strong> разработала UX/UI-концепцию сервиса с AI-подбором рецептов, автоматическим расчётом ингредиентов и интеграцией с доставкой.</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-805a-806f-d9929686e50b" class=""><strong>Результат: </strong>целостная концепция продукта, объединяющая рецепты, корзину и доставку. Сократила время планирования питания для пользователей за счет автоматизации сценариев.</p></div><div style="display:contents" dir="auto"><hr id="2e330e67-d46b-8023-abcf-f7c0118d4263"/></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8080-b80c-ee5b239708e9" class=""><strong>2. Синема Парк </strong><em><mark class="highlight-default">—</mark></em><strong> редизайн web-сервиса кинотеатра</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80a9-ad46-ccd8af1b79d8" class=""><strong>Задача:</strong> упростить навигацию и сократить путь пользователя от выбора фильма до покупки билета.</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8001-bad6-e76bdee385ca" class=""><strong>Решение</strong>: провела анализ текущего UX, переработала информационную архитектуру, пользовательские сценарии и визуальную иерархию, проработала интерактивные состояния.</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80a9-94d8-d13b5af0e99e" class=""><strong>Результат:</strong> создала более логичный и предсказуемый интерфейс, снизила когнитивную нагрузку на пользователя при выборе сеанса.</p></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="2f430e67-d46b-8012-b914-e251f715c6c6"/></div><div style="display:contents" dir="auto"><div id="2e330e67-d46b-80ed-9743-dedeff6f2aad" class="column-list"><div style="display:contents" dir="auto"><div id="2e330e67-d46b-80cc-8c30-eb41695326cc" style="width:31.25%" class="column"><div style="display:contents" dir="auto"><p id="2e330e67-d46b-8060-aaa2-db11cf6b9d95" class=""><strong>ООО «Виджи»</strong></p></div><div style="display:contents" dir="auto"><p id="2e330e67-d46b-8066-a718-c0482a5e35f9" class=""><em><mark class="highlight-gray">Брендинговое агентство</mark></em></p></div><div style="display:contents" dir="auto"><p id="2e330e67-d46b-802c-991b-c1c4ea5fdfcf" class=""><strong>Графический дизайнер</strong></p></div><div style="display:contents" dir="auto"><p id="2e330e67-d46b-802a-baa2-f5a92dbe151d" class=""><em><mark class="highlight-gray">Январь 2023 </mark></em><mark class="highlight-gray">– Ноябрь </mark><em><mark class="highlight-gray">2023<br/>(11 месяцев)</mark></em></p></div><div style="display:contents" dir="auto"><p id="2ef30e67-d46b-8000-8909-f98157af982b" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="2e330e67-d46b-8028-b090-e4146686e3e2" style="width:68.75%" class="column"><div style="display:contents" dir="auto"><p id="30c30e67-d46b-80dd-a9e2-da8fb0813e71" class="">Брендинговое агентство, специализирующееся на разработке айдентики и визуальных коммуникаций для брендов из разных сфер: HoReCa, ритейл, культура, бьюти, события, издательские проекты.</p></div><div style="display:contents" dir="auto"><hr id="30c30e67-d46b-80b6-a62a-fc5dbe27e4a9"/></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80ed-a907-ebedc89df00c" class=""><strong>Что делала:</strong></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-80ad-80f8-f9ffecec3e5c" class=""><mark class="highlight-default">— Разрабатывала айдентику с нуля (логотипы, фирменные стили, брендбуки): сеть бистро «Фиш Ю», дендрарий «Южные культуры», гончарный фестиваль «Roys Ceramic», ресторан «Жигули», бренд уходовой косметики «Velry», магазин запчастей «Мотомир» и т.д.;</mark></p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8073-bb15-f3dccd6cde1c" class=""><em><mark class="highlight-default">—</mark></em> Создавала цифровые и печатные макеты (маркетинговые материалы, упаковку, журналы, плакаты, открытки, календари и т.п.);</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-8067-8ff8-d6bed53027fc" class=""><em><mark class="highlight-default">—</mark></em> Вела проекты под ключ: от анализа брифа и разработки концепции до подготовки файлов к производству;</p></div><div style="display:contents" dir="auto"><p id="2f430e67-d46b-802f-81ba-eaaae6362d03" class=""><em><mark class="highlight-default">—</mark></em> Общалась с заказчиками и презентовала дизайн-решения.</p></div></div></div></div></div><div style="display:contents" dir="auto"><h1 id="17a30e67-d46b-813a-ac96-de49e6c878f0" class="">🎓 Образование</h1></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-8186-b378-d9aaa9fa96c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Бакалавр. Направление «Графический дизайн»</strong>, ДГТУ, Ростов-на-Дону 2025</li></ul></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-8148-aa6a-fdc00c453d27" class="bulleted-list"><li style="list-style-type:disc"><strong>Дополнительное образование: Курс «UI/UX Designer Plus»</strong> (Bang Bang Education), 2026 — настоящее время (завершение)</li></ul></div><div style="display:contents" dir="auto"><h1 id="17a30e67-d46b-81aa-82ba-f0071185a83c" class=""><strong>🎯</strong> Навыки </h1></div><div style="display:contents" dir="auto"><h3 id="2f330e67-d46b-80e9-a8cb-c8e687bb55c2" class=""><strong>Hard skills</strong></h3></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-810c-aedf-f41f665cd5d5" class="bulleted-list"><li style="list-style-type:disc">UX‑исследования и валидация гипотез</li></ul></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-812b-807c-f2d12be4dfd0" class="bulleted-list"><li style="list-style-type:disc">Проектирование user flow, CJM, IA</li></ul></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-812b-a1d6-d450cd7cf91a" class="bulleted-list"><li style="list-style-type:disc">Wireframes и low/high‑fidelity прототипы</li></ul></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-81f8-922e-dce3f8d86489" class="bulleted-list"><li style="list-style-type:disc">UI‑дизайн под продуктовые метрики</li></ul></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-816a-877a-fb07902563d8" class="bulleted-list"><li style="list-style-type:disc">Дизайн‑системы и UI‑киты</li></ul></div><div style="display:contents" dir="auto"><ul id="2f330e67-d46b-8039-b85c-df3793ac298a" class="bulleted-list"><li style="list-style-type:disc">A/B-тестирование визуальных решений</li></ul></div><div style="display:contents" dir="auto"><ul id="2f330e67-d46b-80aa-bac8-ddf0817dd189" class="bulleted-list"><li style="list-style-type:disc">ASO для мобильных приложений</li></ul></div><div style="display:contents" dir="auto"><ul id="2f330e67-d46b-8065-b6a2-c06a638a7613" class="bulleted-list"><li style="list-style-type:disc">Передача дизайна в разработку и сопровождение реализации</li></ul></div><div style="display:contents" dir="auto"><p id="2f330e67-d46b-80dc-8928-f4e093c09308" class="">Инструменты: Figma, Adobe Illustrator, Adobe Photoshop, CorelDRAW, Miro, FigJam, Яндекс Трекер, Jira, Discord, Midjourney, ChatGPT.</p></div><div style="display:contents" dir="auto"><h3 id="2f330e67-d46b-8024-bb2c-cd93ebcf613d" class=""><strong>Soft skills</strong></h3></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8088-ba7b-f4ca066f1109" class="bulleted-list"><li style="list-style-type:disc">Продуктовое мышление и ориентация на результат</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8091-b2fc-e9a279557b85" class="bulleted-list"><li style="list-style-type:disc">Самостоятельность и ответственность</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-809d-b9d4-ed4081410023" class="bulleted-list"><li style="list-style-type:disc">Умение аргументировать дизайн-решения</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8004-97f1-e8693d0c454a" class="bulleted-list"><li style="list-style-type:disc">Спокойное отношение к обратной связи и ревью</li></ul></div><div style="display:contents" dir="auto"><ul id="2e130e67-d46b-8082-8c3e-f7328955c61e" class="bulleted-list"><li style="list-style-type:disc">Работа с итеративным процессом</li></ul></div><div style="display:contents" dir="auto"><h1 id="17a30e67-d46b-8125-b5ef-d4bf3b88c83d" class="">💫 Буду рада пообщаться о работе</h1></div><div style="display:contents" dir="auto"><ul id="17a30e67-d46b-8107-8bc3-fc4379c0dc73" class="bulleted-list"><li style="list-style-type:disc">Телеграм: <a href="https://t.me/druzinaanna">@druzinaanna</a></li></ul></div><div style="display:contents" dir="auto"><ul id="2d630e67-d46b-8029-a414-c45edb4ea1b7" class="bulleted-list"><li style="list-style-type:disc">Почта: <a href="mailto:druzina.anna@yandex.ru">druzina.anna@yandex.ru</a></li></ul></div><div style="display:contents" dir="auto"><p id="17a30e67-d46b-8131-a990-cf9a7932bab9" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
